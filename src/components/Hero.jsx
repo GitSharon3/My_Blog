@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Compass, Mountain } from 'lucide-react';
+import { ArrowRight, ChevronDown, Utensils, Coffee } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { staggerContainer, staggerItem } from '../animations/variants';
 
@@ -18,9 +18,9 @@ const Hero = () => {
           >
             <motion.div variants={staggerItem} className="mb-6">
               <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium 
-                               bg-indigo-50 border border-indigo-200 text-indigo-600">
-                <Compass className="w-4 h-4 mr-2" />
-                Travel Blogger & Explorer
+                               bg-orange-50 border border-orange-200 text-orange-600">
+                <Utensils className="w-4 h-4 mr-2" />
+                Food Blogger & Taste Explorer
               </span>
             </motion.div>
 
@@ -29,16 +29,16 @@ const Hero = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
             >
               <span className="text-gray-900">Hi, I am </span>
-              <span className="text-indigo-600">Sharon</span>
+              <span className="text-orange-600">Sharon</span>
             </motion.h1>
 
             <motion.p
               variants={staggerItem}
               className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto"
             >
-              Exploring the hidden gems of Nepal, one adventure at a time. 
-              Join me as I discover ancient kingdoms, spiritual lakeside ceremonies, 
-              and breathtaking mountain views.
+              Coffee-powered coder by day, food explorer by night. 
+              Join me as I review restaurants, rant about pumpkins, 
+              and celebrate Nepal&apos;s most beloved momos.
             </motion.p>
 
             <motion.div
@@ -49,10 +49,10 @@ const Hero = () => {
                 <Link
                   to="/blog"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold
-                           bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+                           bg-orange-600 text-white hover:bg-orange-700 transition-colors"
                 >
-                  <Mountain className="w-5 h-5" />
-                  Explore Nepal
+                  <Coffee className="w-5 h-5" />
+                  Explore Stories
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </motion.div>
@@ -63,10 +63,10 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
               className="mt-12 inline-flex items-center gap-2 px-4 py-2 rounded-xl 
-                       bg-white shadow-lg border border-indigo-100"
+                       bg-white shadow-lg border border-orange-100"
             >
-              <span className="text-2xl">🇳🇵</span>
-              <span className="text-sm font-medium text-gray-700">Currently Exploring Nepal</span>
+              <span className="text-2xl">🍜</span>
+              <span className="text-sm font-medium text-gray-700">Always Hungry for Good Stories</span>
             </motion.div>
           </motion.div>
 

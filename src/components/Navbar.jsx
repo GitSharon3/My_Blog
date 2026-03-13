@@ -52,7 +52,7 @@ const Navbar = () => {
                   whileTap={{ scale: 0.95 }}
                   className="text-xl lg:text-2xl font-bold text-gray-900"
                 >
-                  Sharon<span className="text-indigo-600">.</span>
+                   Sharon Kadariya<span className="text-indigo-600"></span>
                 </motion.div>
               </Link>
 
@@ -112,9 +112,8 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Right side: Mobile menu */}
+              {/* Mobile Menu Toggle */}
               <div className="flex items-center space-x-2">
-                {/* Mobile Menu Toggle */}
                 <motion.button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                   whileHover={{ scale: 1.1 }}
@@ -165,6 +164,32 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Mobile Categories */}
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <p className="px-4 py-2 text-sm font-semibold text-gray-900">Categories</p>
+                {categories.map((category) => (
+                  <div key={category.id}>
+                    <Link
+                      to={`/blog?category=${category.slug}`}
+                      className="block px-4 py-2 text-gray-700 hover:text-indigo-600 font-medium"
+                    >
+                      {category.name}
+                    </Link>
+                    <div className="pl-6">
+                      {category.subtopics.map((subtopic) => (
+                        <Link
+                          key={subtopic.id}
+                          to={`/blog?category=${category.slug}&subtopic=${subtopic.slug}`}
+                          className="block px-4 py-1 text-sm text-gray-500 hover:text-indigo-500"
+                        >
+                          {subtopic.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}

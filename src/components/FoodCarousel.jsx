@@ -101,7 +101,7 @@ const FoodCarousel = ({ posts }) => {
                   </span>
                   <span className="flex items-center gap-1 text-white/80 text-sm">
                     <Utensils className="w-4 h-4" />
-                    Food Story
+                    {currentPost.subtopicName}
                   </span>
                 </div>
                 <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">

@@ -1,22 +1,12 @@
 /**
  * Posts Data Aggregator
- * Combines all category posts
+ * Food Blog - Only food posts
  */
 
-import technologyPosts from './technologyPosts';
-import techInsightsPosts from './techInsightsPosts';
-import learningPosts from './learningPosts';
 import foodPosts from './foodPosts';
-import travelPosts from './travelPosts';
 
-// Combine all posts
-export const posts = [
-  ...technologyPosts,
-  ...techInsightsPosts,
-  ...learningPosts,
-  ...foodPosts,
-  ...travelPosts,
-];
+// Only food posts
+export const posts = [...foodPosts];
 
 /**
  * Get all posts
@@ -76,11 +66,5 @@ export const getRelatedPosts = (currentPostId, limit = 3) => {
     .slice(0, limit);
 };
 
-// Export all category posts
-export {
-  technologyPosts,
-  techInsightsPosts,
-  learningPosts,
-  foodPosts,
-  travelPosts,
-};
+// Export food posts directly
+export { foodPosts };

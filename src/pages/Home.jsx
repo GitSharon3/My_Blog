@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { MapPin, Compass, ArrowRight } from 'lucide-react';
+import { Utensils, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import TravelCarousel from '../components/TravelCarousel';
-import { travelPosts } from '../data/posts';
+import FoodCarousel from '../components/FoodCarousel';
+import { foodPosts } from '../data/posts';
 import { staggerContainer, staggerItem } from '../animations/variants';
 
 const Home = () => {
@@ -12,8 +12,8 @@ const Home = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* Travel Carousel Section */}
-      <section className="py-20 lg:py-32 bg-slate-50">
+      {/* Food Carousel Section */}
+      <section className="py-20 lg:py-32 bg-orange-50">
         <div className="section-padding">
           <div className="container-max">
             <motion.div
@@ -23,27 +23,27 @@ const Home = () => {
               className="text-center mb-12"
             >
               <div className="flex items-center justify-center gap-2 mb-4">
-                <Compass className="w-6 h-6 text-indigo-600" />
-                <span className="text-lg font-medium text-indigo-600">
-                  Travel Stories
+                <Utensils className="w-6 h-6 text-orange-600" />
+                <span className="text-lg font-medium text-orange-600">
+                  Food Stories
                 </span>
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-                Discover <span className="text-indigo-600">Nepal</span>
+                Taste <span className="text-orange-600">Adventures</span>
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                From the ancient kingdom of Mustang to the spiritual lakeside ceremonies of Pokhara, 
-                explore the hidden gems of Nepal through my journeys.
+                From coffee-fueled coding sessions to momo love stories, 
+                explore my food journey through honest reviews and tasty tales.
               </p>
             </motion.div>
 
             {/* Carousel */}
-            <TravelCarousel posts={travelPosts} />
+            <FoodCarousel posts={foodPosts} />
           </div>
         </div>
       </section>
 
-      {/* Featured Destinations Grid */}
+      {/* Featured Food Grid */}
       <section className="py-20 lg:py-32">
         <div className="section-padding">
           <div className="container-max">
@@ -52,9 +52,9 @@ const Home = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {travelPosts.map((post) => (
+              {foodPosts.map((post) => (
                 <motion.div
                   key={post.id}
                   variants={staggerItem}
@@ -71,11 +71,10 @@ const Home = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                       
                       <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <div className="flex items-center gap-2 mb-3">
-                          <MapPin className="w-4 h-4 text-white/80" />
-                          <span className="text-white/80 text-sm">Nepal</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+                        <span className="inline-block px-3 py-1 bg-orange-500/80 rounded-full text-white text-sm mb-3">
+                          {post.subtopicName}
+                        </span>
+                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
                           {post.title}
                         </h3>
                         <p className="text-white/80 text-sm line-clamp-2">
@@ -97,7 +96,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-slate-50">
+      <section className="py-20 lg:py-32 bg-orange-50">
         <div className="section-padding">
           <div className="container-max">
             <motion.div
@@ -107,16 +106,16 @@ const Home = () => {
               className="max-w-3xl mx-auto text-center"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Let&apos;s <span className="text-indigo-600">Connect</span>
+                Hungry for <span className="text-orange-600">More?</span>
               </h2>
               <p className="text-gray-600 mb-8 text-lg">
-                Have a travel question or want to share your own Nepal stories? 
-                I&apos;d love to hear from you!
+                Have a food recommendation or want to share your own food stories? 
+                Let&apos;s connect and talk about all things delicious!
               </p>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold
-                         bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+                         bg-orange-600 text-white hover:bg-orange-700 transition-colors"
               >
                 Get in Touch
                 <ArrowRight className="w-5 h-5" />
